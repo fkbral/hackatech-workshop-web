@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<body>
+  <h1>Nova Entidade</h1>
+  
+  <form method="POST" action="/entidades">
+    <div>
+      <label>
+        nome
+        <input name="nome" type="text">
+      </label>
+    </div>
+
+    <div>
+      <label>
+        campo de atuação
+
+        <select name="campo">
+          <option selected disabled>Selecione um campo</option>
+
+          <% for (let campo of locals.campos) { %>
+            <option value=<%= campo._id %>> <%= campo.nome %> </option>
+          <% } %> 
+        </select>
+      </label>
+    </div>
+
+    <div>
+      <label>
+        pontos de coleta
+        <input name="pontos_de_coleta" type="text">
+      </label>
+    </div>
+
+    <button>Enviar respostas</button>
+  </form>
+</body>
+</html>
